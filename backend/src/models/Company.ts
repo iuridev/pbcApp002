@@ -5,13 +5,15 @@ class Company{
   cnpj: string;
   tel: number;
   email: string;
+  date: Date;
 
-  constructor({nome, cnpj, tel, email}:Omit<Company, 'id'>){
+  constructor({nome, cnpj, tel, email, date}:Omit<Company, 'id'>){
     this.id = uuid();
     this.nome = nome;
     this.cnpj = cnpj;
     this.tel = tel;
     this.email = email;
+    this.date = date;
   }
 }
 export default Company;
