@@ -4,5 +4,11 @@
   "port":5432,
   "username":"postgres",
   "password":"pbcapp",
-  "database":"bdpbcapp"
+  "database":"bdpbcapp",
+  "migrations":[
+    "./src/database/migrations/*.ts"
+  ],
+  "cli":{
+    "migrationsDir":"./src/database/migrations"
+  }
 }
