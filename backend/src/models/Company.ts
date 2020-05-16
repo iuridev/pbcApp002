@@ -1,19 +1,23 @@
-import {uuid} from 'uuidv4'
-class Company{
-  id: string;  // in future to change for number
-  nome: string;
-  cnpj: string;
-  tel: number;
-  email: string;
-  date: Date;
+import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
-  constructor({nome, cnpj, tel, email, date}:Omit<Company, 'id'>){
-    this.id = uuid();
-    this.nome = nome;
-    this.cnpj = cnpj;
-    this.tel = tel;
-    this.email = email;
-    this.date = date;
-  }
+@Entity('tb_companies')
+class Company{
+  @PrimaryGeneratedColumn('uuid')
+  id: string; 
+
+  @Column()
+  nome: string;
+
+  @Column()
+  cnpj: string;
+
+  @Column('integer')
+  tel: number;
+
+  @Column()
+  email: string;
+
+  @Column('timestamp with local time zone')
+  date: Date;
 }
 export default Company;
