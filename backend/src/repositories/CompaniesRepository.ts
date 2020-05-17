@@ -1,26 +1,9 @@
 import Company from '../models/Company';
+import{EntityRepository, Repository} from 'typeorm';
 
-interface DTOcompany{
-  nome: string;
-  cnpj: string;
-  tel: number;
-  email: string;
-  date: Date;
-}
+@EntityRepository(Company)
+class CompaniesRepository extends Repository<Company>{
 
-class CompaniesRepository{
-  private companies : Company[];
-
-  constructor(){
-    this.companies = [] //inicializando o array
-  }
-
-  public create({nome,cnpj,tel, email,date}:DTOcompany):Company{
-    const company = new Company({nome, cnpj, tel, email, date});
-
-    this.companies.push(company);
-    return company;
-  }
 
 }
 

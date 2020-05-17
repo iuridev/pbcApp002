@@ -17,7 +17,7 @@ class Company{
   @Column()
   email: string;
 
-  @Column('timestamp with local time zone')
+  @Column('timestamp with time zone')
   date: Date;
 }
 export default Company;
