@@ -1,5 +1,5 @@
 // Routes são responsáves por trabalhar com os dados que transitam do front para o backend.
-import { Router, request } from 'express';
+import { Router } from 'express';
 import { getCustomRepository } from 'typeorm';
 import CompaniesRepository from '../repositories/CompaniesRepository';
 import CreateCompanyService from '../services/CreateCompanyService';
