@@ -1,9 +1,8 @@
 import { Router } from 'express';
+import companiesRouter from './companies.router';
 
 const routes = Router();
 
-routes.get('/', (require, response) =>
-  response.json({ message: 'Hello PuclicApp' }),
-);
+routes.use('/companies', companiesRouter);
 
 export default routes;
