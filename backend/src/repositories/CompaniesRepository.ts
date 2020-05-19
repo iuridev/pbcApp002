@@ -1,5 +1,10 @@
-import Company from '../models/Company';
 // repositorios tem a responsabilidade de trabalhar e manipular os dados
-class CompaniesRepository {}
+import { EntityRepository, Repository } from 'typeorm';
+import Company from '../models/Company';
+
+@EntityRepository(Company)
+class CompaniesRepository extends Repository<Company> {
+  // in future methods for filters
+}
 
 export default CompaniesRepository;

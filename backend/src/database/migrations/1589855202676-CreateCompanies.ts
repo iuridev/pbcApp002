@@ -12,6 +12,7 @@ export default class CreateCompanies1589855202676
             type: 'varchar',
             isPrimary: true,
             generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'name',
@@ -36,12 +37,12 @@ export default class CreateCompanies1589855202676
           {
             name: 'create_at',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
           {
             name: 'update_at',
             type: 'varchar',
-            isNullable: false,
+            isNullable: true,
           },
         ],
       }),
