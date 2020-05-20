@@ -8,7 +8,7 @@ export default class CreateUsers1589939559946 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'varchar',
+            type: 'uuid',
             isPrimary: true,
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
@@ -45,6 +45,6 @@ export default class CreateUsers1589939559946 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('tbcompanies');
+    await queryRunner.dropTable('tbusers');
   }
 }
