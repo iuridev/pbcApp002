@@ -1,4 +1,3 @@
-// models são o escorpo de nossa tabela do BD.
 import {
   Entity,
   Column,
@@ -7,8 +6,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('tbcompanies')
-class Company {
+@Entity('tbusers')
+class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -16,13 +15,10 @@ class Company {
   name: string;
 
   @Column()
-  cnpj: string;
-
-  @Column()
   email: string;
 
-  @Column('integer')
-  tel: number;
+  @Column()
+  senha: string;
 
   @CreateDateColumn()
   creat_at: Date;
@@ -31,4 +27,4 @@ class Company {
   update_at: Date;
 }
 
-export default Company;
+export default User;
