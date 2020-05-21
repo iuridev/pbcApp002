@@ -31,6 +31,11 @@ export default class CreateCompanies1589855202676
             isUnique: true,
           },
           {
+            name: 'password',
+            type: 'varchar',
+            isNullable: false,
+          },
+          {
             name: 'tel',
             type: 'integer',
             isNullable: false,

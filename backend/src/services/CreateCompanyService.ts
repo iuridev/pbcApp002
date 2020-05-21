@@ -8,16 +8,24 @@ interface Request {
   name: string;
   cnpj: string;
   email: string;
+  password: string;
   tel: number;
 }
 
 class CreateCompanyServive {
-  public async execute({ name, cnpj, email, tel }: Request): Promise<Company> {
+  public async execute({
+    name,
+    cnpj,
+    email,
+    password,
+    tel,
+  }: Request): Promise<Company> {
     const companiesRepository = getCustomRepository(CompaniesRepository);
     const company = companiesRepository.create({
       name,
       cnpj,
       email,
+      password,
       tel,
     });
     await companiesRepository.save(company);

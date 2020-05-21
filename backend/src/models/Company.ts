@@ -21,11 +21,14 @@ class Company {
   @Column()
   email: string;
 
+  @Column()
+  password: string;
+
   @Column('integer')
   tel: number;
 
   @CreateDateColumn()
-  creat_at: Date;
+  create_at: Date;
 
   @UpdateDateColumn()
   update_at: Date;
