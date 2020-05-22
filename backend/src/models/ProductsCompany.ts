@@ -9,25 +9,28 @@ import {
 } from 'typeorm';
 import Company from './Company';
 
-@Entity('tbadressescompany')
-class AdressesCompany {
+@Entity('tbproducts')
+class ProductsCompany {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  street: string;
+  name: string;
 
   @Column('integer')
-  number: number;
+  price: number;
 
   @Column()
-  neighborhood: string;
+  description: string;
 
   @Column()
-  city: string;
+  weight: string;
 
-  @Column('integer')
-  cep: number;
+  @Column()
+  provider: string;
+
+  @Column()
+  amount: string;
 
   @CreateDateColumn()
   create_at: Date;
@@ -44,4 +47,4 @@ class AdressesCompany {
   company: Company;
 }
 
-export default AdressesCompany;
+export default ProductsCompany;

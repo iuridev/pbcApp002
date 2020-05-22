@@ -42,6 +42,16 @@ export default class CreateAddressesCompany1589942381706
             type: 'integer',
           },
           {
+            name: 'create_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'update_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
             name: 'company_fk_id',
             type: 'uuid',
           },
