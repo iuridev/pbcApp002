@@ -45,6 +45,11 @@ export default class CreateProducts1590158047900 implements MigrationInterface {
             type: 'integer',
           },
           {
+            name: 'avatar',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
             name: 'create_at',
             type: 'timestamp',
             default: 'now()',

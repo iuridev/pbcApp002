@@ -32,6 +32,9 @@ class ProductsCompany {
   @Column()
   amount: string;
 
+  @Column()
+  avatar: string;
+
   @CreateDateColumn()
   create_at: Date;
 

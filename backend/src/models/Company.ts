@@ -27,6 +27,9 @@ class Company {
   @Column('integer')
   tel: number;
 
+  @Column()
+  avatar: string;
+
   @CreateDateColumn()
   create_at: Date;
 
