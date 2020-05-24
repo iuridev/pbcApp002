@@ -2,6 +2,7 @@ import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import Company from '../models/Company';
+import configAuth from '../config/auth';
 
 interface Request {
   email: string;
@@ -27,9 +28,9 @@ class AuthenticateCompanyService {
       throw new Error('Incorrect email/password conbination.');
     }
 
-    const token = sign({}, 'e44c356559adda6bf1094b753ffc76ea', {
+    const token = sign({}, configAuth.jwt.secret, {
       subject: company.id,
-      expiresIn: '1d',
+      expiresIn: configAuth.jwt.expireIn,
     });
 
     return { company, token };
