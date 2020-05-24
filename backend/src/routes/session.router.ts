@@ -9,14 +9,14 @@ sessionRouter.post('/', async (require, response) => {
     const { email, password } = require.body;
     const authenticateCompanyService = new AuthenticateCompanyService();
 
-    const { company } = await authenticateCompanyService.execute({
+    const { company, token } = await authenticateCompanyService.execute({
       email,
       password,
     });
 
     delete company.password;
 
-    return response.json({ company });
+    return response.json({ company, token });
   } catch (error) {
     return response.status(400).json({ error: error.message });
   }

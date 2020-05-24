@@ -1,5 +1,6 @@
 import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
+import { sign } from 'jsonwebtoken';
 import Company from '../models/Company';
 
 interface Request {
@@ -11,7 +12,7 @@ class AuthenticateCompanyService {
   public async execute({
     email,
     password,
-  }: Request): Promise<{ company: Company }> {
+  }: Request): Promise<{ company: Company; token: string }> {
     const companyRepository = getRepository(Company);
 
     const company = await companyRepository.findOne({ where: { email } });
@@ -26,7 +27,12 @@ class AuthenticateCompanyService {
       throw new Error('Incorrect email/password conbination.');
     }
 
-    return { company };
+    const token = sign({}, 'e44c356559adda6bf1094b753ffc76ea', {
+      subject: company.id,
+      expiresIn: '1d',
+    });
+
+    return { company, token };
   }
 }
 
