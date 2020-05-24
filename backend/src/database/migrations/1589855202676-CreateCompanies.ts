@@ -41,6 +41,11 @@ export default class CreateCompanies1589855202676
             isNullable: false,
           },
           {
+            name: 'avatar',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
             name: 'create_at',
             type: 'timestamp',
             default: 'now()',

@@ -76,7 +76,7 @@ export default class CreateProducts1590158047900 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('tbproducts', 'fkcompanyPRODUCT');
+    await queryRunner.dropForeignKey('tbproducts', 'fkcompanyproduct');
     await queryRunner.dropTable('tbproducts');
   }
 }
