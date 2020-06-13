@@ -30,7 +30,7 @@ class ProductsCompany {
   provider: string;
 
   @Column()
-  amount: string;
+  amount: number;
 
   @Column()
   avatar: string;
@@ -43,10 +43,10 @@ class ProductsCompany {
 
   // Forrekey
   @Column()
-  company_fk_id: string;
+  companyfkid: string;
 
   @ManyToOne(() => Company)
-  @JoinColumn({ name: 'company_fk_id' })
+  @JoinColumn({ name: 'companyfkid' })
   company: Company;
 }
 

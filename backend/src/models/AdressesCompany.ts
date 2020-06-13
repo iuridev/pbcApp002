@@ -37,10 +37,10 @@ class AdressesCompany {
 
   // Forrekey
   @Column()
-  company_fk_id: string;
+  companyfkid: string;
 
   @ManyToOne(() => Company)
-  @JoinColumn({ name: 'company_fk_id' })
+  @JoinColumn({ name: 'companyfkid' })
   company: Company;
 }
 

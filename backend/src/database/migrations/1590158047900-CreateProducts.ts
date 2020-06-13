@@ -60,7 +60,7 @@ export default class CreateProducts1590158047900 implements MigrationInterface {
             default: 'now()',
           },
           {
-            name: 'company_fk_id',
+            name: 'companyfkid',
             type: 'uuid',
           },
         ],
@@ -71,7 +71,7 @@ export default class CreateProducts1590158047900 implements MigrationInterface {
       'tbproducts',
       new TableForeignKey({
         name: 'fkcompanyproduct',
-        columnNames: ['company_fk_id'],
+        columnNames: ['companyfkid'],
         referencedColumnNames: ['id'],
         referencedTableName: 'tbcompanies',
         onDelete: 'SET NULL',

@@ -52,7 +52,7 @@ export default class CreateAddressesCompany1589942381706
             default: 'now()',
           },
           {
-            name: 'company_fk_id',
+            name: 'companyfkid',
             type: 'uuid',
           },
         ],
@@ -63,7 +63,7 @@ export default class CreateAddressesCompany1589942381706
       'tbadressescompany',
       new TableForeignKey({
         name: 'fkcompanyadresses',
-        columnNames: ['company_fk_id'],
+        columnNames: ['companyfkid'],
         referencedColumnNames: ['id'],
         referencedTableName: 'tbcompanies',
         onDelete: 'CASCADE',
